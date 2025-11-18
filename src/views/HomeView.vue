@@ -44,7 +44,7 @@ const scrollToProjects = () => { document.getElementById('projects').scrollIntoV
       <p>전화번호: 010-7164-6663</p>
       <p>이메일: rkdwltmd57@naver.com</p>
       
-      <button>이력서 다운로드</button>
+      <a href="/컴퓨터정보공학과_강지승_이력서_자기소개서.pdf" class="btn" download="강지승_이력서.pdf">이력서 다운로드</a>
       <button @click="scrollToProjects">프로젝트 보기</button>
     </section>
 
@@ -237,6 +237,7 @@ const scrollToProjects = () => { document.getElementById('projects').scrollIntoV
   .skill-item:hover,
   .project-card:hover { transform: translateY(-5px); }
 
+  .btn,
   button {
     background-color: #007bff;
     color: white;
@@ -247,10 +248,14 @@ const scrollToProjects = () => { document.getElementById('projects').scrollIntoV
     font-family: 'Noto Sans KR', sans-serif;
     cursor: pointer;
     transition: background-color 0.2s;
+
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 10px;
   }
 
+  .btn:hover,
   button:hover { background-color: #0056b3; }
-
 
   img {
     width: 50px; /* 아이콘 크기 조절 */
