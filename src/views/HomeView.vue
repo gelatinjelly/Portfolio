@@ -31,6 +31,8 @@ const closeModal = () => {
   selectedProject.value = null
 }
 
+const scrollToProjects = () => { document.getElementById('projects').scrollIntoView({ behavior: 'smooth' }) }
+
 </script>
 
 <template>
@@ -43,7 +45,7 @@ const closeModal = () => {
       <p>이메일: rkdwltmd57@naver.com</p>
       
       <button>이력서 다운로드</button>
-      <button>프로젝트 보기</button>
+      <button @click="scrollToProjects">프로젝트 보기</button>
     </section>
 
     <hr> <section class="about">
