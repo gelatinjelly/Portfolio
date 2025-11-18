@@ -95,28 +95,28 @@ const scrollToProjects = () => { document.getElementById('projects').scrollIntoV
     <h1>My Skills</h1>
     
     <div class="skill-item">
-      <!-- <img src="/java-logo.png" alt="Java"> -->
+      <img src="java-logo.png" alt="Java logo">
       <h3>Java</h3>
       <p>숙련도: (숙련도 내용)</p>
       <p>사용 경험: (사용 경험 나열)</p>
     </div>
 
     <div class="skill-item">
-      <!-- <img src="/python-logo.png" alt="Python"> -->
+      <img src="python-logo.png" alt="Python logo">
       <h3>Python</h3>
       <p>숙련도: (숙련도 내용)</p>
       <p>사용 경험: (사용 경험 나열)</p>
     </div>
 
     <div class="skill-item">
-      <!-- <img src="/db-logo.png" alt="Database"> -->
+      <img src="db-logo.png" alt="Database-logo">
       <h3>Database</h3>
       <p>숙련도: (숙련도 내용)</p>
       <p>사용 경험: (사용 경험 나열)</p>
     </div>
 
     <div class="skill-item">
-      <!-- <img src="/android-logo.png" alt="Android"> -->
+      <img src="android-logo.png" alt="Android-logo">
       <h3>Android</h3>
       <p>숙련도: (숙련도 내용)</p>
       <p>사용 경험: (사용 경험 나열)</p>
@@ -223,6 +223,16 @@ const scrollToProjects = () => { document.getElementById('projects').scrollIntoV
     margin-bottom: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     transition: transform 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skill-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 15px;
   }
 
   .project-card {
