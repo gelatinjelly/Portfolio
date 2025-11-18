@@ -15,6 +15,18 @@ import { RouterLink, RouterView } from 'vue-router'
   </header>
 
   <RouterView />
+
+  <footer>
+    <p>© 2025. Kang Ji-seung. All rights reserved.</p>
+
+    <p class="attribution">
+      Icons created by
+      <a href="https://www.flaticon.com/free-icons/javascript" title="javascript icons">Javascript icons created by Smashicons - Flaticon</a><br>
+      <a href="https://www.flaticon.com/free-icons/python" title="python icons">Python icons created by Freepik - Flaticon</a><br>
+      <a href="https://www.flaticon.com/free-icons/data-source" title="data source icons">Data source icons created by Vectorslab - Flaticon</a><br>
+      <a href="https://www.flaticon.com/free-icons/android" title="android icons">Android icons created by Pixel perfect - Flaticon</a>
+    </p>
+  </footer>
 </template>
 
 <style scoped>
@@ -46,4 +58,23 @@ nav a {
 nav a:hover {
   color: #007bff;
 }
+
+footer {
+  background-color: var(--color-background-soft);
+  padding: 30px 0;
+  text-align: center;
+  border-top: 1px solid var(--color-border);
+  margin-top: 50px;
+  font-size: 12px;
+  color: #666;
+}
+
+footer p { margin: 5px 0; }
+
+footer a {
+  color: #666;
+  text-decoration: none;
+}
+
+footer a:hover { text-decoration: underline; }
 </style>
