@@ -44,7 +44,7 @@ const scrollToProjects = () => { document.getElementById('projects').scrollIntoV
       <p>전화번호: 010-7164-6663</p>
       <p>이메일: rkdwltmd57@naver.com</p>
       
-      <a href="/컴퓨터정보공학과_강지승_이력서_자기소개서.pdf" class="btn" download="강지승_이력서.pdf">이력서 다운로드</a>
+      <a href="컴퓨터정보공학과_강지승_이력서_자기소개서.pdf" class="btn" download="강지승_이력서.pdf">이력서 다운로드</a>
       <button @click="scrollToProjects">프로젝트 보기</button>
     </section>
 
