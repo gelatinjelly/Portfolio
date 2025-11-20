@@ -38,14 +38,15 @@ const scrollToProjects = () => { document.getElementById('projects').scrollIntoV
 <template>
   <main>
     <section id="about" class="main-profile">
+      <img src="/profile.png" alt="강지승 프로필 사진" class="profile-img">
       <h1>강지승</h1>
       <p>간단한 한 줄 소개</p>
-      
       <p>전화번호: 010-7164-6663</p>
       <p>이메일: rkdwltmd57@naver.com</p>
-      
-      <a href="컴퓨터정보공학과_강지승_이력서_자기소개서.pdf" class="btn" download="강지승_이력서.pdf">이력서 다운로드</a>
-      <button @click="scrollToProjects">프로젝트 보기</button>
+      <dev class="button-group">
+        <a href="컴퓨터정보공학과_강지승_이력서_자기소개서.pdf" class="btn" download="강지승_이력서.pdf">이력서 다운로드</a>
+        <button @click="scrollToProjects">프로젝트 보기</button>
+      </dev>
     </section>
 
     <hr> <section class="about">
@@ -215,6 +216,32 @@ const scrollToProjects = () => { document.getElementById('projects').scrollIntoV
     border-top: 1px solid var(--color-border-hover);
     margin: 40px 0;
   }
+
+  .profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid var(--color-border);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .main-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+    justify-content: center;
+  }
+
+  .main-profile .btn, .main-profile button { margin: 5px; }
 
   .skill-item { 
     background-color: var(--color-background-soft);
