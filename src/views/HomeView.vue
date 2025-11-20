@@ -49,8 +49,9 @@ const scrollToProjects = () => { document.getElementById('projects').scrollIntoV
       </dev>
     </section>
 
-    <hr> <section class="about">
-      <h2>About Me</h2>
+    <hr>
+    <section class="about">
+      <h1 class="section-title">About Me</h1>
 
       <h3>📜 자격증</h3>
       <table>
@@ -91,44 +92,44 @@ const scrollToProjects = () => { document.getElementById('projects').scrollIntoV
       </table>
     </section>
 
-    <hr> <section id="skills">
-    <div class="skills">
-    <h1>My Skills</h1>
-    
-    <div class="skill-item">
-      <img src="/java-logo.png" alt="Java logo">
-      <h3>Java</h3>
-      <p>숙련도: (숙련도 내용)</p>
-      <p>사용 경험: (사용 경험 나열)</p>
-    </div>
+    <hr> 
+    <section id="skills">
+      <h1 class="section-title">My Skills</h1>
+      <div class="skills">
+        <div class="skill-item">
+          <img src="/java-logo.png" alt="Java logo">
+          <h3>Java</h3>
+          <p>숙련도: (숙련도 내용)</p>
+          <p>사용 경험: (사용 경험 나열)</p>
+        </div>
 
-    <div class="skill-item">
-      <img src="/python-logo.png" alt="Python logo">
-      <h3>Python</h3>
-      <p>숙련도: (숙련도 내용)</p>
-      <p>사용 경험: (사용 경험 나열)</p>
-    </div>
+        <div class="skill-item">
+          <img src="/python-logo.png" alt="Python logo">
+          <h3>Python</h3>
+          <p>숙련도: (숙련도 내용)</p>
+          <p>사용 경험: (사용 경험 나열)</p>
+        </div>
 
-    <div class="skill-item">
-      <img src="/db-logo.png" alt="Database-logo">
-      <h3>Database</h3>
-      <p>숙련도: (숙련도 내용)</p>
-      <p>사용 경험: (사용 경험 나열)</p>
-    </div>
+        <div class="skill-item">
+          <img src="/db-logo.png" alt="Database-logo">
+          <h3>Database</h3>
+          <p>숙련도: (숙련도 내용)</p>
+          <p>사용 경험: (사용 경험 나열)</p>
+        </div>
 
-    <div class="skill-item">
-      <img src="/android-logo.png" alt="Android-logo">
-      <h3>Android</h3>
-      <p>숙련도: (숙련도 내용)</p>
-      <p>사용 경험: (사용 경험 나열)</p>
-    </div>
-  </div>
-  </section>
+        <div class="skill-item">
+          <img src="/android-logo.png" alt="Android-logo">
+          <h3>Android</h3>
+          <p>숙련도: (숙련도 내용)</p>
+          <p>사용 경험: (사용 경험 나열)</p>
+        </div>
+      </div>
+    </section>
 
   <hr>
   <section id="projects">
   <div class="projects">
-    <h1>Projects</h1>
+    <h1 class="section-title">Projects</h1>
 
     <div class="project-card" 
     v-for="project in projects":key="project.id">
@@ -142,7 +143,7 @@ const scrollToProjects = () => { document.getElementById('projects').scrollIntoV
 
   <hr><section id="education">
   <div class="education">
-    <h1>Education</h1>
+    <h1 class="section-title">Education</h1>
 
     <div class="education-item">
       <h3>인하공업전문대학</h3>
@@ -160,7 +161,7 @@ const scrollToProjects = () => { document.getElementById('projects').scrollIntoV
 
   <hr><section id="contact">
   <div class="contact">
-    <h1>Contact Me</h1>
+    <h1 class="section-title">Contact Me</h1>
     <p>아래 방법으로 편하게 연락주세요.</p>
 
     <div class="contact-item">
@@ -217,6 +218,14 @@ const scrollToProjects = () => { document.getElementById('projects').scrollIntoV
     margin: 40px 0;
   }
 
+  .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 35px;
+    color: var(--color-heading);
+  }
+
   .profile-img {
     width: 150px;
     height: 150px;
@@ -243,11 +252,24 @@ const scrollToProjects = () => { document.getElementById('projects').scrollIntoV
 
   .main-profile .btn, .main-profile button { margin: 5px; }
 
+  .skills {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  @media (max-width: 768px) {
+    .skills {
+      grid-template-columns: 1fr;
+    }
+  }
+
   .skill-item { 
     background-color: var(--color-background-soft);
     border-radius: 8px;
     padding: 20px;
-    margin-bottom: 20px;
+    /* margin-bottom: 0; */
+    height: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     transition: transform 0.2s ease-in-out;
     display: flex;
