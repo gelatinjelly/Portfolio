@@ -1,6 +1,17 @@
 <script setup>
 import { ref } from 'vue'
 
+// Swiper 관련 기능들 불러오기
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+
+// Swiper 스타일 불러오기
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+const modules = [Autoplay, Pagination, Navigation];
+
 const projects = ref([
   {
     id: 1,
@@ -9,9 +20,26 @@ const projects = ref([
     description: '프로젝트 설명',
     details: '상세 설명'
   },
+
   {
     id: 2,
     title: '프로젝트 명 2',
+    period: '2023.01 ~ 2023.02',
+    description: '프로젝트 설명',
+    details: '상세 설명' 
+  },
+
+  {
+    id: 3,
+    title: '프로젝트 명 3',
+    period: '2023.01 ~ 2023.02',
+    description: '프로젝트 설명',
+    details: '상세 설명' 
+  },
+
+  {
+    id: 4,
+    title: '프로젝트 명 4',
     period: '2023.01 ~ 2023.02',
     description: '프로젝트 설명',
     details: '상세 설명' 
@@ -125,20 +153,46 @@ const scrollToProjects = () => { document.getElementById('projects').scrollIntoV
         </div>
       </div>
     </section>
+    <!-- <swiper
+    :slides-per-view = "1"
+    :space-between = "30"
+    :loop = "true"
+    :autoplay= "{ delay: 2500, disableOnInteraction: false, }"
+    :breakpoints= "{ 
+      '640': { slidesPerView: 2, spaceBetween: 20,},
+      '1024': { slidesPerView: 3, spaceBetween: 40,}, }"
+    :modules = "modules"
+    class = "mySwiper">
+      <swiper-slide>
+        <
+      </swiper-slide>
+    </swiper> -->
 
   <hr>
   <section id="projects">
-  <div class="projects">
     <h1 class="section-title">Projects</h1>
-
-    <div class="project-card" 
-    v-for="project in projects":key="project.id">
-      <h3>{{ project.title }}</h3>
-      <p>개발 기간: {{ project.period }}</p>
-      <p>간단한 설명: {{ project.description }}</p>
-      <button @click="openModal(project)">자세히 보기</button>
-    </div>
-  </div>
+    <swiper
+    :slides-per-view = "1"
+    :space-between = "30"
+    :loop = "true"
+    :pagination = "{ clickable: true }"
+    :autoplay= "{ delay: 3000, disableOnInteraction: false, }"
+    :breakpoints= "{ 
+      '640': { slidesPerView: 2, spaceBetween: 20,},
+      '768': { slidesPerView: 2, spaceBetween: 30},
+      '1024': { slidesPerView: 3, spaceBetween: 40,}, }"
+    :modules = "modules"
+    class = "projectSwiper">
+      <swiper-slide v-for="project in projects" :key="project.id">
+        <div class="project-card">
+          <img v-if = "project.image" :src = "project.image" alt = "프로젝트 이미지" class = "project-img"></img>
+          <h3>{{ project.title }}</h3>
+          <p>개발 기간: {{ project.period }}</p>
+          <p>간단한 설명: {{ project.description }}</p>
+          <button @click="openModal(project)">자세히 보기</button>
+        </div>
+      </swiper-slide>
+    </swiper>
   </section>
 
   <hr><section id="education">
@@ -284,13 +338,45 @@ const scrollToProjects = () => { document.getElementById('projects').scrollIntoV
     margin-bottom: 15px;
   }
 
+  .projectSwiper {
+    width: 100%;
+    padding-bottom: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
   .project-card {
     background-color: var(--color-background-soft);
-    border-radius: 8px;
-    padding: 20px;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s; 
+  }
+
+  .project-card:hover { transform: translateY(-5px); }
+
+  .project-img { 
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+
+  .project-period {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+
+  .project-desc {
+    flex-grow: 1;
     margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s ease-in-out; 
+    line-height: 1.5px;
   }
 
   .skill-item:hover,
