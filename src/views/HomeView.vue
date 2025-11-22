@@ -66,10 +66,10 @@ const scrollToProjects = () => { document.getElementById('projects').scrollIntoV
       <p>간단한 한 줄 소개</p>
       <p>전화번호: 010-7164-6663</p>
       <p>이메일: rkdwltmd57@naver.com</p>
-      <dev class="button-group">
+      <div class="button-group">
         <a href="컴퓨터정보공학과_강지승_이력서_자기소개서.pdf" class="btn" download="강지승_이력서.pdf">이력서 다운로드</a>
         <button @click="scrollToProjects">프로젝트 보기</button>
-      </dev>
+      </div>
     </section>
 
     <hr>
@@ -200,7 +200,7 @@ const scrollToProjects = () => { document.getElementById('projects').scrollIntoV
         <div class = "timeline-content">
           <h3>인하공업전문대학</h3>
           <p class = "major">컴퓨터정보공학과 (전문학사)</p>
-          <p clas = "gpa">학점: 3.31/4.5</p>
+          <p class = "gpa">학점: 3.31/4.5</p>
         </div>
       </div>
     </div>
@@ -208,36 +208,36 @@ const scrollToProjects = () => { document.getElementById('projects').scrollIntoV
     <div class = "timeline-item">
       <div class = "timeline-dot"></div>
       <div class = "timeline-date">2018.03 ~ 2021. 01</div>
-      <div clas = "timeline-content">
+      <div class = "timeline-content">
         <h3>금곡고등학교</h3>
-        <p class = "marjor">IT콘텐츠학과</p>
+        <p class = "major">IT콘텐츠학과</p>
         <p>졸업</p>
       </div>
     </div>
   </section>
 
-  <hr><section id="contact">
-  <div class="contact">
+  <hr>
+  <section id="contact">
     <h1 class="section-title">Contact Me</h1>
-    <p>아래 방법으로 편하게 연락주세요.</p>
-
-    <div class="contact-item">
-      <h3>📧 이메일</h3>
-      <p>rkdwltmd57@naver.com</p>
-    </div>
-
-    <div class="contact-item">
-      <h3>📞 연락처</h3>
-      <p>010-7164-6663</p>
-    </div>
-    
-    <div class="contact-item">
-      <h3>💻 GitHub</h3>
-      <a href="https(GitHub 주소 입력)" target="_blank">
-        (GitHub 주소 입력, 예: https://github.com/YourID)
+    <div class = "contact-container">
+      <div class = "contact-card">
+        <div class = "icon">📧</div>
+        <h3>Email</h3>
+        <p>rkdwltmd57@naver.com</p>
+      </div>
+      <div class = "contact-card">
+        <div class = "icon">📞</div>
+        <h3>Phone</h3>
+        <p>010-7164-6663</p>
+      </div>
+      
+      <a href="https//github.com/gelatinjelly" target="_blank" class = "contect-card link-card">
+        <div class = "icon">💻</div>
+        <h3>GitHub</h3>
+        <p>github.com/gelatinjelly</p>
+        <span class = "click-hint">Visit 👋</span>
       </a>
     </div>
-  </div>
   </section>
 
   </main>
@@ -379,7 +379,7 @@ const scrollToProjects = () => { document.getElementById('projects').scrollIntoV
   .project-desc {
     flex-grow: 1;
     margin-bottom: 20px;
-    line-height: 1.5px;
+    line-height: 1.5;
   }
 
   .skill-item:hover,
@@ -422,6 +422,83 @@ const scrollToProjects = () => { document.getElementById('projects').scrollIntoV
     top: 15px;
     z-index: 1;
     box-shadow: 0 0 0 2px #007bff;
+  }
+
+  .timeline-date {
+    font-size: 0.9rem;
+    color: #007bff;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .timeline-content {
+    background-color: var(--color-background-soft);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .timeline-content h3 { margin-bottom: 5px; }
+
+  .timeline-content .major {
+    font-weight: bold;
+    color: #555;
+  }
+
+  .timeline-content .gpa {
+    font-size: 0.9rem;
+    color: #777;
+  }
+
+  .contact-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  .contact-card {
+    background-color: var(--color-background-soft);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    width: 250px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid transparent;
+  }
+
+  .contact-card:hover { transform: translateY(-10px); }
+
+  .link-card:hover {
+    border-color: #007bff;
+    background-color: #f0f7ff;
+  }
+
+  .contact-card .icon {
+    border-color: #007bff;
+    /* background-color: #f0f7ff; */
+  }
+
+  .contact-card h3 {
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  .contact-card p {
+    font-size: 0.95rem;
+    color: #555;
+    word-break: break-all;
+  }
+
+  .click-hint {
+    display: block;
+    margin-top: 15px;
+    font-size: 0.8rem;
+    color: #007bff;
+    font-weight: bold;
   }
 
   .btn,
