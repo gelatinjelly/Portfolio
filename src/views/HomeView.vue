@@ -5,6 +5,11 @@ import { ref } from 'vue'
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
+// Swiper 스타일 불러오기
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
 const modules = [Autoplay, Pagination, Navigation];
 
 const projects = ref([
@@ -203,15 +208,15 @@ const scrollToProjects = () => { document.getElementById('projects').scrollIntoV
           <p class = "gpa">학점: 3.31/4.5</p>
         </div>
       </div>
-    </div>
 
-    <div class = "timeline-item">
-      <div class = "timeline-dot"></div>
-      <div class = "timeline-date">2018.03 ~ 2021. 01</div>
-      <div class = "timeline-content">
-        <h3>금곡고등학교</h3>
-        <p class = "major">IT콘텐츠학과</p>
-        <p>졸업</p>
+      <div class = "timeline-item">
+        <div class = "timeline-dot"></div>
+        <div class = "timeline-date">2018.03 ~ 2021. 01</div>
+        <div class = "timeline-content">
+          <h3>금곡고등학교</h3>
+          <p class = "major">IT콘텐츠학과</p>
+          <p>졸업</p>
+        </div>
       </div>
     </div>
   </section>
@@ -397,18 +402,16 @@ const scrollToProjects = () => { document.getElementById('projects').scrollIntoV
     position: absolute;
     width: 2px;
     background-color: var(--color-border);
-    top: 0;
+    top: 5px;
     bottom: 0;
     left: 20px;
     margin-left: -1px;
   }
 
   .timeline-item {
-    padding: 10px 40px;
+    padding: 0 0 0 40px;
     position: relative;
-    background-color: inherit;
-    width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
   }
 
   .timeline-dot {
@@ -416,19 +419,20 @@ const scrollToProjects = () => { document.getElementById('projects').scrollIntoV
     height: 16px;
     border-radius: 50px;
     background-color: #007bff;
-    border: 3px solid white;
+    border: 4px solid var(--color-background);
     position: absolute;
     left: 12px;
-    top: 15px;
+    top: 0px;
     z-index: 1;
     box-shadow: 0 0 0 2px #007bff;
   }
 
   .timeline-date {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: #007bff;
     font-weight: bold;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    line-height: 1;
   }
 
   .timeline-content {
