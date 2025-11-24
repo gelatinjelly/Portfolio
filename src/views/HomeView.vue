@@ -236,7 +236,7 @@ const scrollToProjects = () => { document.getElementById('projects').scrollIntoV
         <p>010-7164-6663</p>
       </div>
       
-      <a href="https//github.com/gelatinjelly" target="_blank" class = "contect-card link-card">
+      <a href="https://github.com/gelatinjelly" target="_blank" class = "contect-card link-card">
         <div class = "icon">💻</div>
         <h3>GitHub</h3>
         <p>github.com/gelatinjelly</p>
