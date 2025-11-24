@@ -20,11 +20,11 @@ import { RouterLink, RouterView } from 'vue-router'
     <p>© 2025. Kang Ji-seung. All rights reserved.</p>
 
     <p class="attribution">
-      Icons created by
-      <a href="https://www.flaticon.com/free-icons/javascript" title="javascript icons">Javascript icons created by Smashicons - Flaticon</a><br>
-      <a href="https://www.flaticon.com/free-icons/python" title="python icons">Python icons created by Freepik - Flaticon</a><br>
-      <a href="https://www.flaticon.com/free-icons/data-source" title="data source icons">Data source icons created by Vectorslab - Flaticon</a><br>
-      <a href="https://www.flaticon.com/free-icons/android" title="android icons">Android icons created by Pixel perfect - Flaticon</a>
+      Icons created by<br>
+      <a href="https://www.flaticon.com/free-icons/javascript" title="javascript icons">Javascript icons created by Smashicons - Flaticon</a>
+      | <a href="https://www.flaticon.com/free-icons/python" title="python icons">Python icons created by Freepik - Flaticon</a>
+      | <a href="https://www.flaticon.com/free-icons/data-source" title="data source icons">Data source icons created by Vectorslab - Flaticon</a>
+      | <a href="https://www.flaticon.com/free-icons/android" title="android icons">Android icons created by Pixel perfect - Flaticon</a>
     </p>
   </footer>
 </template>
@@ -75,6 +75,8 @@ footer a {
   color: #666;
   text-decoration: none;
 }
+
+footer .attribution { margin-left: 5px;}
 
 footer a:hover { text-decoration: underline; }
 </style>
