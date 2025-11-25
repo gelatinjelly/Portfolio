@@ -326,6 +326,25 @@ const scrollToProjects = () => { document.getElementById('projects').scrollIntoV
     }
   }
 
+  @media (max-width: 600px) {
+    .button-group {
+      width: 100%;
+      padding: 0 10px;
+      box-sizing: border-box;
+      gap: 10px;
+    }
+
+    .main-profile .btn,
+    .main-profile button {
+      flex: 1;
+      font-size: 13px;
+      padding: 12px 0;
+      margin: 0;
+      white-space: nowrap;
+      width: auto;
+    }
+  }
+
   .skill-item { 
     background-color: var(--color-background-soft);
     border-radius: 8px;
