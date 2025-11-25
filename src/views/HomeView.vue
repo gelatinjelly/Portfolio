@@ -37,35 +37,59 @@ const toggleIntro = (key) => { introState.value[key] = !introState.value[key] }
 const projects = ref([
   {
     id: 1,
-    title: '대중교통 길찾기 앱',
-    period: '2025.03 ~ 2025.05',
-    description: '도착 시간 기준으로 길찾기 기능을 제공',
-    details: '상세 설명'
+    title: '비상! 화장실',
+    period: '2025.05 ~ 2025.06',
+    description: `
+    - 사용자 현재 위치 기반 주변 공주화장실 제공
+    - 현위치에서 선택한 화장실까지 경로 안내`,
+    details: '상세 설명',
+    image: 'https://cdn.discordapp.com/attachments/833785508294688768/1442823900537819187/image.png?ex=6926d5f8&is=69258478&hm=140b30ca595a4e0b1ffcf41a607dd6ffaecd9ef478fa8973b733ca67d3034fb0&'
   },
 
   {
     id: 2,
-    title: '프로젝트 명 2',
-    period: '2023.01 ~ 2023.02',
-    description: '프로젝트 설명',
-    details: '상세 설명' 
+    title: '대중교통 길찾기 앱',
+    period: '2025.03 ~ 2025.05',
+    description: `
+    - 도착 시간 기준으로 길찾기 기능을 제공
+    - 경로 정보를 켈리더에 저장 후 해당 날에 알림 제공`,
+    details: '상세 설명',
+    image: 'https://media.discordapp.net/attachments/833785508294688768/1442800615049924680/image.png?ex=6926c048&is=69256ec8&hm=1b6ba8293ca4b482c88bfc1d5315ed8ba5ab95c224a8bfdb3e9f8f807938fd1a&=&format=webp&quality=lossless&width=531&height=525'
   },
 
   {
     id: 3,
-    title: '프로젝트 명 3',
-    period: '2023.01 ~ 2023.02',
-    description: '프로젝트 설명',
-    details: '상세 설명' 
+    title: 'PC 부품 커뮤니티 사이트',
+    period: '2024.11 ~ 2024.12',
+    description: `
+    - JSP기반 MVC 아키텍처로 웹 커뮤니티 사이트 제작
+    - MySQL과 연동하여 게시글 작성, 조회, 수정, 삭제 등 CRUD구현`,
+    details: '상세 설명',
+    image: 'https://media.discordapp.net/attachments/833785508294688768/1442810078053924905/image.png?ex=6926c918&is=69257798&hm=45c877cc952531a1947c1c9d21728d3684d1141f681f5379df78b9d17dae7de1&=&format=webp&quality=lossless&width=2489&height=1311'
   },
 
   {
     id: 4,
-    title: '프로젝트 명 4',
-    period: '2023.01 ~ 2023.02',
-    description: '프로젝트 설명',
-    details: '상세 설명' 
-  }
+    title: '과제 메모장',
+    period: '2024.10 ~ 2024.12',
+    description: `
+    - 과목, 내용, 제출 날짜를 입력받아 남은 기한 계산
+    - Oracle DB를 이용하여 회원가입 / 로그인 페이지 구현`,
+    details: '상세 설명',
+    image: 'https://cdn.discordapp.com/attachments/833785508294688768/1442831550281547887/image.png?ex=6926dd18&is=69258b98&hm=4ed4d6be84439eaa8f416b30264a61cea695dce30d930b8deb4d136eedb0a789&' 
+  },
+
+  {
+    id: 5,
+    title: '비주얼 노벨 게임 제작',
+    period: '2024.08 ~ 2024.12',
+    description: `
+    - Unity를 활용하여 비주얼 노벨 게임 제작
+    - 진행 상황 및 환경 설정 정보를 JSON으로 저장`,
+    details: '',
+    image: 'https://cdn.discordapp.com/attachments/833785508294688768/1442808201476178062/image.png?ex=6926c759&is=692575d9&hm=e38e24b9039945c2c19fbc93e963ef1e60ae1286ee838c7e1001b8857afdf976&'
+  },
+
 ])
 </script>
 
@@ -243,6 +267,7 @@ const projects = ref([
       </div>
     </section>
   <hr>
+
   <section id="projects">
     <h1 class="section-title">Projects</h1>
     <swiper
@@ -262,8 +287,8 @@ const projects = ref([
         <div class="project-card">
           <img v-if = "project.image" :src = "project.image" alt = "프로젝트 이미지" class = "project-img"></img>
           <h3>{{ project.title }}</h3>
-          <p>개발 기간: {{ project.period }}</p>
-          <p>간단한 설명: {{ project.description }}</p>
+          <p class = "project-period">개발 기간: {{ project.period }}</p>
+          <p class = "project-desc">간단한 설명: {{ project.description }}</p>
           <button @click="openModal(project)">자세히 보기</button>
         </div>
       </swiper-slide>
@@ -627,6 +652,7 @@ const projects = ref([
     flex-grow: 1;
     margin-bottom: 20px;
     line-height: 1.5;
+    white-space: pre-line;
   }
 
   .skill-item:hover,
