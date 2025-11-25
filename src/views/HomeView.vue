@@ -492,9 +492,9 @@ const projects = ref([
   background-color: #333;
   color: white;
   font-weight: bold;
- }
+}
 
- td { color: #ddd; }
+ td { color: var(--color-text); }
 
  tr:hover td{ background-color: rgba(255, 255, 255, 0.05); }
 
