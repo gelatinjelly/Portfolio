@@ -390,7 +390,7 @@ const projects = ref([
 
     .intro-toggle h3 { 
       font-size: 1rem; 
-      margin-left: 10px;
+      margin-right: 5px;
     }
 
     .toggle-icon { font-size: 0.8rem; }
