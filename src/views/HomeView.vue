@@ -37,9 +37,9 @@ const toggleIntro = (key) => { introState.value[key] = !introState.value[key] }
 const projects = ref([
   {
     id: 1,
-    title: '프로젝트 명 1',
-    period: '2023.01 ~ 2023.02',
-    description: '프로젝트 설명',
+    title: '대중교통 길찾기 앱',
+    period: '2025.03 ~ 2025.05',
+    description: '도착 시간 기준으로 길찾기 기능을 제공',
     details: '상세 설명'
   },
 
@@ -114,13 +114,14 @@ const projects = ref([
       </div>
       <div class = "intro-content" v-show = "introState.exp">
         <p>
-          다양한 프로젝트를 수행하며 백엔드와 데이터베이스 중심의 역량을 키워왔습니다. JSP 기반의 커뮤니티 사이트를 제작하며, MySQL과의 연동을 통해 CRUD 기능과 세션 관리 기능을 직접 구현하였습니다. 이를 통해 웹 서비스의 기본 구조를 이해하고, DB와 서버 로직을 연결하는 경험을 쌓았습니다.<br>
-          또한 Android 플랫폼에서는 대중교통 길찾기 앱을 개발하였습니다. 외부 API 문서를 분석하여 서비스에 적용하는 능력과 로컬 및 클라우드 데이터베이스를 효율적으로 활용하는 방법을 익혔습니다. 특히 이 프로젝트로 한국컴퓨터정보학회 하계 학술대회에서 우수논문상을 수상하며, 학습한 내용을 실질적인 성과로 발전시키는 경험을 얻었습니다.
+          다양한 프로젝트를 수행하며 백엔드와 데이터베이스 중심의 역량을 키워왔습니다. JSP 기반의 커뮤니티 사이트를 제작하며, MySQL과의 연동을 통해 CRUD 기능과 세션 관리 기능을 직접 구현하였습니다. 이를 통해 웹 서비스의 기본 구조를 이해하고, DB와 서버 로직을 연결하는 경험을 쌓았습니다.<br><br>
+          또한 Android 플렛폼에서는 대중교통 길찾기 앱을 개발하였습니다. Kakao Map과 T Map 대중교통 API를 연동하여 도보·버스·지하철 경로를 시각화 하고, RoomDB를 활용해 경로 및 일정을 저장·관리하는 기능을 구현하였습니다. 이 과정을 통해 외부 API 문서를 분석하여 서비스에 적용하는 능력과 로컬 및 클라우드 데이터베이스를 효율적으로 활용하는 방법을 익혔습니다.<br><br>
+          특히 대중교통 길찾기 앱은 단순한 학습 프로젝트에 그치지 않고 개발 과정을 정리해 논문으로 작성하여 한국컴퓨터정보학회 하계 학술대회에서 우수논문상을 수상하는 성과로 이어졌습니다. 이를 통해 학습한 내용을 실질적인 결과로 발전시키는 경험을 얻을 수 있었고, 앞으로 자기주도적 학습과 도전을 통해 전문성을 지속적으로 강화해 나가고자 합니다.
         </p>
       </div>
       
       <hr class = "divider">
-      <h3>📜 자격증</h3>
+      <h3 class = "table-h3">📜 자격증</h3>
       <table>
         <thead>
           <tr>
@@ -138,7 +139,7 @@ const projects = ref([
         </tbody>
       </table>
 
-      <h3>🏆 수상 경력</h3>
+      <h3 class = "table-h3">🏆 수상 경력</h3>
       <table>
         <thead>
           <tr>
@@ -151,9 +152,26 @@ const projects = ref([
         <tbody>
           <tr>
             <td>우수상</td>
-            <td>(OOO 공모전)</td>
-            <td>(202X.XX.XX)</td>
-            <td>(OOO 시스템 개발)</td>
+            <td>한국컴퓨터정보학회 하계 학술대회</td>
+            <td>2025.07.11</td>
+            <td>도착 시간 기준 최적 경로 제공 Map 구현 논문 작성</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 class = "table-h3">🪖 병역</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>구분</th>
+            <th>군별</th>
+            <th>복무 기간</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>육군 (만기전역)</td>
+            <td>병장</td>
+            <td>2021.12.20 ~ 2023.06.19</td>
           </tr>
         </tbody>
       </table>
@@ -372,7 +390,95 @@ const projects = ref([
 
   .main-profile .btn, .main-profile button { margin: 5px; }
 
-  .skills {
+  .intro-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-background-soft);
+  color: var(--color-heading);
+  border: 1px solid var(--color-border);
+  padding: 15px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+.intro-toggle:hover { background-color: rgba(150, 150, 150, 0.1); }
+
+.intro-toggle h3 {
+  color: #007bff;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.intro-content p {
+  color: var(--color-text);
+  margin-bottom: 10px;
+}
+
+.toggle-icon {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
+.intro-content {
+  background-color: var(--color-background-soft);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  padding: 25px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  line-height: 1.7;
+  animation: fadeIn 0.5s ease;
+}
+
+/* .intro-content string {
+  color: white;
+  font-weight: bold;
+} */
+
+ .divider {
+  border: 0;
+  border-top: 1px dashed #444;
+  margin: 30px 0;
+ }
+
+ table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+  background-color: var(--color-background-soft);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+ }
+
+ th, td {
+  padding: 12px, 15px;
+  text-align: center;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.95rem;
+ }
+
+ th {
+  background-color: #333;
+  color: white;
+  font-weight: bold;
+ }
+
+ td { color: #ddd; }
+
+ tr:hover td{ background-color: rgba(255, 255, 255, 0.05); }
+
+ .table-h3 { 
+  color: var(--color-text);
+  margin-bottom: 5px;
+}
+
+ .skills {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
@@ -695,62 +801,6 @@ const projects = ref([
 }
 
 .modal-content button:hover { background-color: #333; }
-
-.intro-toggle {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: var(--color-background-soft);
-  color: var(--color-heading);
-  border: 1px solid var(--color-border);
-  padding: 15px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-bottom: 10px;
-  transition: all 0.3s ease;
-}
-
-.intro-toggle:hover { background-color: rgba(150, 150, 150, 0.1); }
-
-.intro-toggle h3 {
-  color: #007bff;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  font-size: 1.1rem;
-}
-
-.intro-content p {
-  color: var(--color-text);
-  margin-bottom: 10px;
-}
-
-.toggle-icon {
-  font-size: 0.9rem;
-  color: var(--color-text);
-  white-space: nowrap;
-}
-
-.intro-content {
-  background-color: var(--color-background-soft);
-  color: var(--color-text);
-  border: 1px solid var(--color-border);
-  padding: 25px;
-  border-radius: 8px;
-  margin-bottom: 15px;
-  line-height: 1.7;
-  animation: fadeIn 0.5s ease;
-}
-
-/* .intro-content string {
-  color: white;
-  font-weight: bold;
-} */
-
- .divider {
-  border: 0;
-  border-top: 1px dashed #444;
-  margin: 30px 0;
- }
 
  @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-10px); }
