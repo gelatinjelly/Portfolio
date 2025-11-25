@@ -74,7 +74,6 @@ const projects = ref([
     <section id="about" class="main-profile">
       <img src="/profile.png" alt="강지승 프로필 사진" class="profile-img">
       <h1>강지승</h1>
-      <p>간단한 한 줄 소개</p>
       <p>전화번호: 010-7164-6663</p>
       <p>이메일: rkdwltmd57@naver.com</p>
       <div class="button-group">
@@ -165,49 +164,66 @@ const projects = ref([
       <h1 class="section-title">Skills</h1>
       <div class="skills">
         <div class="skill-item">
-          <img src="/java-logo.png" alt="Java logo">
+          <img src="/java-logo.png" alt="Java logo" class = "skill-logo">
           <h3>Java</h3>
-          <p>숙련도: (숙련도 내용)</p>
-          <p>사용 경험: (사용 경험 나열)</p>
+          <div class = "skill-bar-container">
+            <div class = "skill-row">
+              <span class = "skill-label">숙련도</span>
+              <div class = "skill-bar-bg">
+                <div class = "skill-bar-fill" style = "width: 70%"></div>
+              </div>
+              <span class = "skill-percent">70%</span>
+            </div>
+          </div>
+          <p class = "skill-desc">사용 경험: (사용 경험 나열)</p>
         </div>
 
         <div class="skill-item">
-          <img src="/python-logo.png" alt="Python logo">
+          <img src="/python-logo.png" alt="Python logo" class = "skill-logo">
           <h3>Python</h3>
-          <p>숙련도: (숙련도 내용)</p>
-          <p>사용 경험: (사용 경험 나열)</p>
+          <div class = "skill-bar-container">
+            <div class = "skill-row">
+              <span class = "skill-label">숙련도</span>
+              <div class = "skill-bar-bg">
+                <div class = "skill-bar-fill" style = "width: 60%"></div>
+              </div>
+              <span class = "skill-percent">60%</span>
+            </div>
+          </div>
+          <p class = "skill-desc">사용 경험: (사용 경험 나열)</p>
         </div>
 
         <div class="skill-item">
-          <img src="/db-logo.png" alt="Database-logo">
+          <img src="/db-logo.png" alt="Database-logo" class = "skill-logo">
           <h3>Database</h3>
-          <p>숙련도: (숙련도 내용)</p>
-          <p>사용 경험: (사용 경험 나열)</p>
+          <div class = "skill-bar-container">
+            <div class = "skill-row">
+              <span class = "skill-label">숙련도</span>
+              <div class = "skill-bar-bg">
+                <div class = "skill-bar-fill" style = "width: 60%"></div>
+              </div>
+              <span class = "skill-percent">60%</span>
+            </div>
+          </div>
+          <p class = "skill-desc">사용 경험: (사용 경험 나열)</p>
         </div>
 
         <div class="skill-item">
-          <img src="/android-logo.png" alt="Android-logo">
+          <img src="/android-logo.png" alt="Android-logo" class = "skill-logo">
           <h3>Android</h3>
-          <p>숙련도: (숙련도 내용)</p>
-          <p>사용 경험: (사용 경험 나열)</p>
+          <div class = "skill-bar-container">
+            <div class = "skill-row">
+              <span class = "skill-label">숙련도</span>
+              <div class = "skill-bar-bg">
+                <div class = "skill-bar-fill" style = "width: 50%"></div>
+              </div>
+              <span class = "skill-percent">50%</span>
+            </div>
+          </div>
+          <p class = "skill-desc">사용 경험: (사용 경험 나열)</p>
         </div>
       </div>
     </section>
-    <!-- <swiper
-    :slides-per-view = "1"
-    :space-between = "30"
-    :loop = "true"
-    :autoplay= "{ delay: 2500, disableOnInteraction: false, }"
-    :breakpoints= "{ 
-      '640': { slidesPerView: 2, spaceBetween: 20,},
-      '1024': { slidesPerView: 3, spaceBetween: 40,}, }"
-    :modules = "modules"
-    class = "mySwiper">
-      <swiper-slide>
-        <
-      </swiper-slide>
-    </swiper> -->
-
   <hr>
   <section id="projects">
     <h1 class="section-title">Projects</h1>
@@ -414,6 +430,57 @@ const projects = ref([
     height: 60px;
     object-fit: contain;
     margin-bottom: 15px;
+  }
+
+  .skill-bar-container {
+    width: 100%;
+    margin: 15px 0;
+  }
+
+  .skill-row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    margin: 15px 0;
+  }
+
+  .skill-label {
+    font-size: 0.9rem;
+    color: #ccc;
+    white-space: nowrap;
+    min-width: 45px;
+  }
+
+  
+  .skill-bar-bg {
+    flex-grow: 1;
+    height: 8px;
+    background-color: #444;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .skill-bar-fill {
+    height: 100%;
+    background-color: #007bff;
+    border-radius: 10px;
+    transition: width 1s ease-in-out;
+  }
+  
+  .skill-percent {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #007bff;
+    min-width: 35px;
+    text-align: right;
+  }
+
+  .skill-desc {
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: 5px;
+    text-align: center;
   }
 
   .projectSwiper {
