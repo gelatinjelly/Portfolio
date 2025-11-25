@@ -59,6 +59,19 @@ nav a:hover {
   color: #007bff;
 }
 
+@media (max-width: 768px) {
+  nav {
+    gap: 10px;
+    justify-content: space-evenly;
+    padding: 0 10px;
+  }
+
+  nav a {
+    font-size: 13px;
+    padding: 2px;
+  }
+}
+
 footer {
   background-color: var(--color-background-soft);
   padding: 30px 0;
@@ -75,8 +88,6 @@ footer a {
   color: #666;
   text-decoration: none;
 }
-
-footer .attribution { margin-left: 5px;}
 
 footer a:hover { text-decoration: underline; }
 </style>
