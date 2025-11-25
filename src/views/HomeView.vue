@@ -385,6 +385,15 @@ const projects = ref([
       white-space: nowrap;
       width: auto;
     }
+
+    .intro-toggle { padding: 12px 15px; }
+
+    .intro-toggle h3 { 
+      font-size: 1rem; 
+      margin-left: 10px;
+    }
+
+    .toggle-icon { font-size: 0.8rem; }
   }
 
   .skill-item { 
@@ -626,36 +635,43 @@ const projects = ref([
   justify-content: space-between;
   align-items: center;
   background-color: var(--color-background-soft);
+  color: var(--color-heading);
+  border: 1px solid var(--color-border);
   padding: 15px 20px;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.2s;
   margin-bottom: 10px;
-  margin-top: 10px;
-  border: 1px solid var(--color-border);
+  transition: all 0.3s ease;
 }
 
-.intro-toggle:hover { background-color: #333; }
+.intro-toggle:hover { background-color: rgba(150, 150, 150, 0.1); }
 
 .intro-toggle h3 {
-  margin: 0;
-  font-size: 1.2rem;
   color: #007bff;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.intro-content p {
+  color: var(--color-text);
+  margin-bottom: 10px;
 }
 
 .toggle-icon {
   font-size: 0.9rem;
-  color: #888;
+  color: var(--color-text);
+  white-space: nowrap;
 }
 
 .intro-content {
   background-color: var(--color-background-soft);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
   padding: 25px;
   border-radius: 8px;
   margin-bottom: 15px;
-  line-height: 1.8;
-  color: #ddd;
-  border: 1px solid transparent;
+  line-height: 1.7;
   animation: fadeIn 0.5s ease;
 }
 
