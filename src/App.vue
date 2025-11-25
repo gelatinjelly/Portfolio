@@ -25,6 +25,7 @@ import { RouterLink, RouterView } from 'vue-router'
       | <a href="https://www.flaticon.com/free-icons/python" title="python icons">Python icons created by Freepik - Flaticon</a>
       | <a href="https://www.flaticon.com/free-icons/data-source" title="data source icons">Data source icons created by Vectorslab - Flaticon</a>
       | <a href="https://www.flaticon.com/free-icons/android" title="android icons">Android icons created by Pixel perfect - Flaticon</a>
+      | <a href="https://www.flaticon.com/free-icons/jsp" title="jsp icons">Jsp icons created by IconMarketPK - Flaticon</a>
     </p>
   </footer>
 </template>
