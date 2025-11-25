@@ -405,10 +405,10 @@ const projects = ref([
 
         <div class="modal-footer">
           <a v-if="selectedProject.githubLink" :href="selectedProject.githubLink" target="_blank" class="btn-github">
-            <span class="icon">🐙</span> Github Repository
+            <i class="devicon-github-original"></i> Github Repository
           </a>
+          <button class="btn-close" @click="closeModal">닫기</button>
         </div>
-        <button class="btn-close" @click="closeModal">닫기</button>
       </div>
     </div>
   </div>
@@ -971,33 +971,45 @@ const projects = ref([
 
 .modal-footer {
   display: flex;
+  align-items: center;
   gap: 20px;
-  padding-top: 20px;
+  padding-top: 10px;
   border-top: 1px solid #333;
+  margin-top: auto;
 }
 
 .btn-github {
   display: flex;
   align-items: center;
-  gap: 10px;
-  background-color: #2a60cf; /* 이미지 속 파란색 버튼 */
+  justify-content: center;
+  background-color: #2a60cf;
   color: white;
   text-decoration: none;
-  padding: 12px 25px;
-  border-radius: 30px;
+  padding: 0 20px;
+  border-radius: 8px;
   font-weight: bold;
   transition: background-color 0.2s;
+  border: none;
+  height: 45px;
+}
+ 
+
+.btn-github i {
+  font-size: 1.5rem;
+  margin-right: 8px;
 }
 
 .btn-close {
-  padding: 12px 25px;
-  border-radius: 30px;
+  height: 45px;
+  padding: 0px 25px;
+  border-radius: 8px;
   border: 1px solid #555;
-  background-color: transparent;
+  background-color: #333;
   color: #ddd;
   cursor: pointer;
   font-weight: bold;
   transition: all 0.2s;
+  margin-bottom: 20px;
 }
 
 .btn-github:hover { background-color: #1e4bad; }
