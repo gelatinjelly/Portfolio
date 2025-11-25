@@ -26,7 +26,7 @@
 (3인 팀 프로젝트)`,period:"2025.05 ~ 2025.06",description:`
     - 사용자 현재 위치 기반 주변 공주화장실 제공
     - 현위치에서 선택한 화장실까지 경로 안내`,overview:"이 프로젝트는 낯선 장소에서 화장실을 찾기 어려운 상황을 해결하기 위해 기획되었습니다. 주요 기능으로는 위치 기반 화장실 탐색, 상세 정보 및 길찾기 기능이 있습니다.",features:`- 현재 위치 기반 화장실 탐색 기능: 애플리케이션 실행 시 사용자의 현재 위치를 자동으로 추적하여 지도 중심에 표시합니다. 사용자 반경 500m 이내의 공중화장실이 지도에 마커 형태로 시각화 됩니다.
-- 상세 정보 확인 및 길찾기 기능: 마커 클릭시 하단에 정보창이 나타납니다. 이름, 주소, 개방 시간, 기저귀 교환대 유무 등 세부 정보를 제공합니다. 길찾기 버튼을 누르면 Google 지도가 실행되어 경로를 안내합니다.`,screenshots:["/toilet_1.png","/toilet_2.png","/toilet_3.png"],image:"/toilet_1.png",techStack:[{name:"Java",icon:"devicon-java-plain colored"},{name:"Firebase",icon:"devicon-firebase-plain colored"},{name:"Android Studio",icon:"devicon-androidstudio-plain colored"}],githubLink:""},{id:2,title:`대중교통 길찾기 앱
+- 상세 정보 확인 및 길찾기 기능: 마커 클릭시 하단에 정보창이 나타납니다. 이름, 주소, 개방 시간, 기저귀 교환대 유무 등 세부 정보를 제공합니다. 길찾기 버튼을 누르면 Google 지도가 실행되어 경로를 안내합니다.`,screenshots:["toilet_1.png","toilet_2.png","toilet_3.png"],image:"toilet_1.png",techStack:[{name:"Java",icon:"devicon-java-plain colored"},{name:"Firebase",icon:"devicon-firebase-plain colored"},{name:"Android Studio",icon:"devicon-androidstudio-plain colored"}],githubLink:""},{id:2,title:`대중교통 길찾기 앱
 (개인 프로젝트)`,period:"2025.03 ~ 2025.05",description:`
     - 도착 시간 기준으로 길찾기 기능을 제공
     - 경로 정보를 켈리더에 저장 후 해당 날에 알림 제공`,overview:"이 프로젝트는 국내 지도 애플리케이션에서는 기본적으로 위치 검색, 현재 시간 기준 길찾기, 특정 시간 기준 길찾기 등의 기능을 기본적으로 제공하고 있지만, 도착 시간을 기준으로 한 길찾기 기능은 지원하지 않고 있어 기획하게 되었습니다. 사용자가 입력한 도착 시간에 맞춰 출발 시간과 최적 경로를 역산하여 제시하는 기능이 있습니다.",features:`- 도착지 키워드 검색: 사용자가 입력한 주소 또는 상호명 등의 키워드를 기반으로, Kakao Map API를 이용하여 해당 위치 정보를 검색하고, 지도에 해당 위치를 마커로 시각화합니다.
