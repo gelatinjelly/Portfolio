@@ -416,7 +416,6 @@ const projects = ref([
     background-color: var(--color-background-soft);
     border-radius: 8px;
     padding: 20px;
-    /* margin-bottom: 0; */
     height: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     transition: transform 0.2s ease-in-out;
@@ -447,7 +446,7 @@ const projects = ref([
 
   .skill-label {
     font-size: 0.9rem;
-    color: #ccc;
+    color: var(--color-text);
     white-space: nowrap;
     min-width: 45px;
   }
@@ -478,7 +477,7 @@ const projects = ref([
 
   .skill-desc {
     font-size: 0.9rem;
-    color: #888;
+    color: var(--color-text);
     margin-top: 5px;
     text-align: center;
   }
