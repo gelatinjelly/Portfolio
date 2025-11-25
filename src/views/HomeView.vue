@@ -12,6 +12,28 @@ import 'swiper/css/navigation';
 
 const modules = [Autoplay, Pagination, Navigation];
 
+const isModalOpen = ref(false)
+const selectedProject = ref(null)
+const scrollToProjects = () => { document.getElementById('projects').scrollIntoView({ behavior: 'smooth' }) }
+
+const openModal = (projectData) => {
+  selectedProject.value =projectData
+  isModalOpen.value = true
+}
+
+const closeModal = () => {
+  isModalOpen.value = false
+  selectedProject.value = null
+}
+
+const introState = ref({
+  intro: true,
+  pros: true,
+  exp: true
+})
+
+const toggleIntro = (key) => { introState.value[key] = !introState.value[key] }
+
 const projects = ref([
   {
     id: 1,
@@ -45,22 +67,6 @@ const projects = ref([
     details: '상세 설명' 
   }
 ])
-
-const isModalOpen = ref(false)
-const selectedProject = ref(null)
-
-const openModal = (projectData) => {
-  selectedProject.value =projectData
-  isModalOpen.value = true
-}
-
-const closeModal = () => {
-  isModalOpen.value = false
-  selectedProject.value = null
-}
-
-const scrollToProjects = () => { document.getElementById('projects').scrollIntoView({ behavior: 'smooth' }) }
-
 </script>
 
 <template>
@@ -79,8 +85,42 @@ const scrollToProjects = () => { document.getElementById('projects').scrollIntoV
 
     <hr>
     <section class="about">
-      <h1 class="section-title">About Me</h1>
+      <h1 class="section-title">About</h1>
+      <div class = "intro-toggle" @click = "toggleIntro('intro')">
+        <h3>1. 자기소개 및 지원 동기</h3>
+        <span class = "toggle-icon">{{ introState.intro ? '🔼 접기' : '🔽 펼치기' }}</span>
+      </div>
+      <div class = "intro-content" v-show = "introState.intro">
+        <p>
+        저는 새로운 기술을 배우고 적용하는 과정에서 성취감을 느끼는 개발자 강지승입니다. 중학교 시절 단순한 챗봇 코드에 흥미를 가지며 프로그래밍을 시작했고, 대학에 진학한 이후에는 웹, 앱, 서버 등 다양한 프로젝트를 수행하였습니다.<br><br>
+        특히 API 연동과 데이터베이스 설계를 통해 안정적이고 실용적인 시스템을 구현하는 과정에서 큰 흥미를 느꼈습니다. JSP 기반 커뮤니티 사이트, Android 대중교통 길찾기 앱, Python Discord 봇 개발을 통해 웹·앱·DB 전반에 대한 경험을 확장할 수 있었습니다.<br><br>
+        앞으로 새로운 기술을 능동적으로 학습하고 적용하며, 안정적이고 신뢰할 수 있는 시스템을 구축하는 개발자로 성장하고자 합니다.
+        </p>
+      </div>
 
+      <div class = "intro-toggle" @click = "toggleIntro('pros')">
+        <h3>2. 성격의 장단점</h3>
+        <span class = "toggle-icon">{{ introState.pros ? '🔼 접기' : '🔽 펼치기' }}</span>
+      </div>
+      <div class = "intro-content" v-show = "introState.pros">
+        <p>
+          저의 가장 큰 장점은 문제 해결 과정 자체를 즐긴다는 점입니다. 오류 메시지를 추적하거나 요청·응답 구조를 분석하여 원인을 밝혀내는 과정에서 오히려 재미를 느끼고, 이를 통해 더 안정적인 결과물을 만들어낼 수 있었습니다.<br><br>
+          반면, 문제 해결에 지나치게 몰입하다 보니 일정 관리가 부족했던 경험도 있었습니다. 이를 보완하기 위해 프로젝트 초기에 목표를 세분화하고 우선순위를 정해 관리하는 습관을 들였고, 이후에는 기한 내에 높은 완성도로 결과를 낼 수 있었습니다.
+        </p>
+      </div>
+
+      <div class = "intro-toggle" @click = "toggleIntro('exp')">
+        <h3>3. 지원분야와 관련된 활동 및 학습경험</h3>
+        <span class = "toggle-icon">{{ introState.exp ? '🔼 접기' : '🔽 펼치기' }}</span>
+      </div>
+      <div class = "intro-content" v-show = "introState.exp">
+        <p>
+          다양한 프로젝트를 수행하며 백엔드와 데이터베이스 중심의 역량을 키워왔습니다. JSP 기반의 커뮤니티 사이트를 제작하며, MySQL과의 연동을 통해 CRUD 기능과 세션 관리 기능을 직접 구현하였습니다. 이를 통해 웹 서비스의 기본 구조를 이해하고, DB와 서버 로직을 연결하는 경험을 쌓았습니다.<br>
+          또한 Android 플랫폼에서는 대중교통 길찾기 앱을 개발하였습니다. 외부 API 문서를 분석하여 서비스에 적용하는 능력과 로컬 및 클라우드 데이터베이스를 효율적으로 활용하는 방법을 익혔습니다. 특히 이 프로젝트로 한국컴퓨터정보학회 하계 학술대회에서 우수논문상을 수상하며, 학습한 내용을 실질적인 성과로 발전시키는 경험을 얻었습니다.
+        </p>
+      </div>
+      
+      <hr class = "divider">
       <h3>📜 자격증</h3>
       <table>
         <thead>
@@ -122,7 +162,7 @@ const scrollToProjects = () => { document.getElementById('projects').scrollIntoV
 
     <hr> 
     <section id="skills">
-      <h1 class="section-title">My Skills</h1>
+      <h1 class="section-title">Skills</h1>
       <div class="skills">
         <div class="skill-item">
           <img src="/java-logo.png" alt="Java logo">
@@ -183,6 +223,7 @@ const scrollToProjects = () => { document.getElementById('projects').scrollIntoV
       '1024': { slidesPerView: 3, spaceBetween: 40,}, }"
     :modules = "modules"
     class = "projectSwiper">
+
       <swiper-slide v-for="project in projects" :key="project.id">
         <div class="project-card">
           <img v-if = "project.image" :src = "project.image" alt = "프로젝트 이미지" class = "project-img"></img>
@@ -192,6 +233,7 @@ const scrollToProjects = () => { document.getElementById('projects').scrollIntoV
           <button @click="openModal(project)">자세히 보기</button>
         </div>
       </swiper-slide>
+
     </swiper>
   </section>
 
@@ -223,7 +265,7 @@ const scrollToProjects = () => { document.getElementById('projects').scrollIntoV
 
   <hr>
   <section id="contact">
-    <h1 class="section-title">Contact Me</h1>
+    <h1 class="section-title">Contact</h1>
     <div class = "contact-container">
       <div class = "contact-card">
         <div class = "icon">📧</div>
@@ -578,4 +620,58 @@ const scrollToProjects = () => { document.getElementById('projects').scrollIntoV
 }
 
 .modal-content button:hover { background-color: #333; }
+
+.intro-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-background-soft);
+  padding: 15px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border: 1px solid var(--color-border);
+}
+
+.intro-toggle:hover { background-color: #333; }
+
+.intro-toggle h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #007bff;
+}
+
+.toggle-icon {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.intro-content {
+  background-color: var(--color-background-soft);
+  padding: 25px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  line-height: 1.8;
+  color: #ddd;
+  border: 1px solid transparent;
+  animation: fadeIn 0.5s ease;
+}
+
+/* .intro-content string {
+  color: white;
+  font-weight: bold;
+} */
+
+ .divider {
+  border: 0;
+  border-top: 1px dashed #444;
+  margin: 30px 0;
+ }
+
+ @keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+ }
 </style>
