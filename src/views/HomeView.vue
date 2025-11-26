@@ -195,7 +195,7 @@ const projects = ref([
         </thead>
         <tbody>
           <tr>
-            <td>우수상</td>
+            <td>우수 논문상</td>
             <td>한국컴퓨터정보학회 하계 학술대회</td>
             <td>2025.07.11</td>
             <td>도착 시간 기준 최적 경로 제공 Map 구현 논문 작성</td>
@@ -226,6 +226,21 @@ const projects = ref([
       <h1 class="section-title">Skills</h1>
       <div class="skills">
         <div class="skill-item">
+          <img src="/python-logo.png" alt="Python logo" class = "skill-logo">
+          <h3>Python</h3>
+          <div class = "skill-bar-container">
+            <div class = "skill-row">
+              <span class = "skill-label">숙련도</span>
+              <div class = "skill-bar-bg">
+                <div class = "skill-bar-fill" style = "width: 80%"></div>
+              </div>
+              <span class = "skill-percent">80%</span>
+            </div>
+          </div>
+          <p class = "skill-desc">사용 경험: Discord 봇 개발 및 외부 라이브러리를 활용한 자동화 스크립트 작성</p>
+        </div>
+
+        <div class="skill-item">
           <img src="/java-logo.png" alt="Java logo" class = "skill-logo">
           <h3>Java</h3>
           <div class = "skill-bar-container">
@@ -237,23 +252,9 @@ const projects = ref([
               <span class = "skill-percent">70%</span>
             </div>
           </div>
-          <p class = "skill-desc">사용 경험: (사용 경험 나열)</p>
+          <p class = "skill-desc">사용 경험: Java 언어의 기본 문법 숙지 및 JSP/Servlet을 활용한 웹 애플리케이션 개발</p>
         </div>
 
-        <div class="skill-item">
-          <img src="/python-logo.png" alt="Python logo" class = "skill-logo">
-          <h3>Python</h3>
-          <div class = "skill-bar-container">
-            <div class = "skill-row">
-              <span class = "skill-label">숙련도</span>
-              <div class = "skill-bar-bg">
-                <div class = "skill-bar-fill" style = "width: 60%"></div>
-              </div>
-              <span class = "skill-percent">60%</span>
-            </div>
-          </div>
-          <p class = "skill-desc">사용 경험: (사용 경험 나열)</p>
-        </div>
 
         <div class="skill-item">
           <img src="/db-logo.png" alt="Database-logo" class = "skill-logo">
@@ -267,7 +268,7 @@ const projects = ref([
               <span class = "skill-percent">60%</span>
             </div>
           </div>
-          <p class = "skill-desc">사용 경험: (사용 경험 나열)</p>
+          <p class = "skill-desc">사용 경험: 데이터 CRUD(생성/조회/수정/삭제) 기능 구현 및 로컬/클라우드 DB 연동</p>
         </div>
 
         <div class="skill-item">
@@ -282,7 +283,7 @@ const projects = ref([
               <span class = "skill-percent">50%</span>
             </div>
           </div>
-          <p class = "skill-desc">사용 경험: (사용 경험 나열)</p>
+          <p class = "skill-desc">사용 경험: Google Maps API 및 외부 API 연동을 통한 위치 기반 서비스 앱 개발</p>
         </div>
       </div>
     </section>
@@ -563,12 +564,14 @@ const projects = ref([
   }
 
   @media (max-width: 768px) {
-    .skills {
-      grid-template-columns: 1fr;
-    }
+    
   }
 
   @media (max-width: 600px) {
+    .skills {
+      grid-template-columns: 1fr;
+    }
+
     .button-group {
       width: 100%;
       padding: 0 10px;
@@ -594,6 +597,9 @@ const projects = ref([
     }
 
     .toggle-icon { font-size: 0.8rem; }
+
+    .btn-github, 
+    .btn-close { white-space: nowrap; }
   }
 
   .skill-item { 
